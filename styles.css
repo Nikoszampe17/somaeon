@@ -20,7 +20,7 @@ body {
 
 /* === Header === */
 .main-header {
-  background-color: #F0E7DB;
+  background-color: #f0e7db;
   padding: 2.5rem 0;
   position: sticky;
   top: 0;
@@ -187,19 +187,164 @@ nav ul li a:hover {
     gap: 1rem;
   }
 }
+/* Hero*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;                   /* Full screen */
+  overflow: hidden;
+  display: block;                  /* Override global section flex */
+  padding: 0 !important;           /* Remove global padding */
+}
 
+/* Hero image */
+/* === HERO (desktop & general) === */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;        /* full screen hero */
+  overflow: hidden;
+}
 
-/* === Sections & Footer === */
-section {
-  height: 100vh;
+.hero-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;    /* keeps aspect ratio, fills screen */
+  object-position: center; /* default, we'll override on mobile */
+}
+
+/* text overlay */
+.hero-text {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+  width: 85%;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #BDA585;
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+}
+
+/* === MOBILE HERO TWEAKS === */
+@media (max-width: 768px) {
+  .hero {
+    height: 85vh; /* a bit less tall feels better on phones */
+  }
+
+  .hero-img {
+    object-position: 80% center
+  }
+
+  .hero-text {
+    bottom: 18%;
+    left: 8%;              /* move text to the left side (empty space) */
+    transform: none;       /* no centering on mobile */
+    text-align: left;
+    width: 70%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .hero-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+/* About Section*/
+.about-section {
+  background-color: #f9f5f0;
+  color: #2a2a2a;
+  padding: 8rem 2rem 6rem;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  min-height: 100vh;
+  scroll-margin-top: 120px; /* Prevent overlap with sticky header */
 }
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #4b4b4b;
+}
+
+.about-content ul {
+  list-style: none;
+  text-align: left;
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+.about-content ul li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.about-content ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #b89c74;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.about-content em {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #b89c74;
+  margin: 1.5rem 0;
+}
+
+/* === Sections & Footer === */
+section {
+  padding: 4rem 2rem;
+}
+
+
 
 footer {
   text-align: center;

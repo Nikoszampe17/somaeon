@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somaeon Wellness - Location</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/styles.css">    
+
+  </head>
+
+<body>
+
+  <header class="main-header" id="site-header">
+    <div class="container header-container">
+      <!-- Hamburger for mobile -->
+      <button class="hamburger" id="hamburger" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="nav-left">
+        <ul>
+      <li><a href="../pages/about.html">Who We Are</a></li>
+      <li><a href="../pages/treatments.html">Treatments</a> </li>
+        </ul>
+      </nav>
+
+       <div class="logo" id="logo">
+        <a href="../index.html">
+        <img src="../assets/images/logo.png" alt="Somaeon Logo" />
+        </a>
+      </div>
+
+      <nav class="nav-right">
+        <ul>
+        <li><a href="../pages/location.html">Location</a></li>
+        <li><a href="../pages/contact.html">Book Your Session</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+<section id="location" class="location-section">
+  <div class="container location-container">
+    <div class="location-grid">
+
+      <!-- LEFT — TEXT -->
+      <div class="location-text">
+        <h2>Where Somaeon Comes to You</h2>
+        
+        <p class="luxury-text">
+          <strong>Your Somaeon experience begins where you are.</strong><br>
+          We bring the ritual of wellness directly to your home, accommodation, or private space —
+          offering a calm, uninterrupted session designed around your comfort.
+        </p>
+
+        <p class="location-highlight">
+          Within our central service radius, travel is <strong>complimentary</strong>.<br>
+          Outside this boundary, travel is calculated at <strong>€1.25 per km each way</strong> (total <strong>€2.50 per km</strong> of distance
+          beyond the complimentary radius).
+
+        </p>
+
+
+
+        <div class="check-area">
+          <h3>Check your area</h3>
+          <input id="address-input" type="text" placeholder="Enter your address">
+          <button id="check-area-btn">Check</button>
+          <p id="area-result"></p>
+        </div>
+      </div>
+
+      <!-- RIGHT — MAP -->
+      <div class="location-map">
+        <div class="map-embed">
+          <div id="somaeon-map"></div>
+        </div>
+        <p class="map-caption">
+          The shaded circle represents our complimentary service area.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+    <footer>
+    <p>&copy; 2025 Somaeon Wellness</p>
+  </footer>
+
+<script src="../assets/js/global.js"></script>
+<script src="../assets/js/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&libraries=geometry&callback=initMap" async defer></script>
+  </body>
+</html>

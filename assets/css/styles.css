@@ -167,12 +167,12 @@ nav ul li a:hover {
     transition: all 0.4s ease;
   }
 
-  .nav-left {
+  .nav-left { 
     top: 100%;
   }
 
   .nav-right {
-    top: calc(100% + 100%); /*This line adds spacing below nav-left */
+    top: calc(100% + 85%); /*This line adds spacing below nav-left */
   }
 
   .nav-left.active,
@@ -339,8 +339,8 @@ nav ul li a:hover {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
   position: relative;
-  opacity: 1;                 /* ΔΕΝ είναι πια κρυμμένα */
-  transform: translateY(0);   /* Κανονική θέση */
+  opacity: 1;                 
+  transform: translateY(0);   
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .about-content ul li::before {
@@ -366,8 +366,409 @@ nav ul li a:hover {
   margin: 2rem auto;
   line-height: 1.6;
   padding: 1rem 1.5rem;
-  background: linear-gradient(to bottom, transparent 60%, #f1e8dd 60%);
+  
 }
+
+/* === About: Mission & Vision === */   
+.about-mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top:  5rem;
+  text-align: left;
+}
+
+.about-mission-vision h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  margin-bottom: 0.8rem;
+  color: #4b4b4b;
+}
+
+.about-mission-vision p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #3a3a3a;
+}
+
+/* === About: Values === */
+.about-values {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.about-values h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  margin-bottom: 1.2rem;
+  color: #4b4b4b;
+}
+
+.about-values-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-values-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 0;
+}
+
+.about-values-list strong {
+  color: #b89c74;
+  font-weight: 700;
+}
+
+/* === About: Divider === */
+.about-divider {
+  margin: 4rem auto 2.5rem;
+  max-width: 260px;
+  text-align: center;
+}
+
+.about-divider-line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, #bda585, transparent);
+  margin-bottom: 0.8rem;
+}
+
+.about-divider-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  color: #7a7267;
+}
+
+/* === About: CTA === */
+.about-cta {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.about-cta-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #4b4b4b;
+  margin-bottom: 1.3rem;
+}
+
+.about-cta-btn {
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background-color: #BDA585;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid #b89c74;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-cta-btn:hover {
+  background-color: #a48d6c;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+/* === About: Responsive layout === */
+@media (max-width: 768px) {
+  .about-mission-vision {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-divider {
+    margin-top: 3rem;
+  }
+
+  .about-cta-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* === Treatments Page === */
+
+.treatments-page {
+  background-color: #f9f5f0;
+  color: #2a2a2a;
+  padding-bottom: 4rem;
+}
+
+.treatments-hero {
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+}
+
+.treatments-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.treatments-kicker {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b89c74;
+  margin-bottom: 0.8rem;
+}
+
+.treatments-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #4b4b4b;
+}
+
+.treatments-intro {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Cards grid */
+
+.treatments-section {
+  padding: 1rem 2rem 4rem;
+}
+
+.treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.treatment-card {
+  background-color: #fdfaf6;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(189, 165, 133, 0.22);
+}
+
+.treatment-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.treatment-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.8s ease;
+}
+
+.treatment-card:hover .treatment-image {
+  transform: scale(1.06);
+}
+
+.treatment-card-body {
+  padding: 1.8rem 1.8rem 1.6rem;
+  font-family: 'Lato', sans-serif;
+}
+
+.treatment-label {
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b89c74;
+  margin-bottom: 0.6rem;
+}
+
+.treatment-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+  color: #3b3b3b;
+}
+
+.treatment-price {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 1.1rem;
+}
+
+.treatment-description {
+  font-size: 0.98rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.treatment-subblock {
+  margin-bottom: 1.2rem;
+}
+
+.treatment-subblock h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #4b4b4b;
+}
+
+.treatment-subblock ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.treatment-subblock ul li {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.35rem;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.treatment-subblock ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #bda585;
+}
+
+.treatment-subblock p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 0.6rem;
+}
+
+
+.treatment-note {
+  font-size: 0.9rem;
+  color: #7a7267;
+  margin-top: 1rem;
+}
+
+/* Featured / signature card */
+.treatment-card-featured {
+  position: relative;
+  border: 1px solid #bda585;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.treatment-featured-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: rgba(189, 165, 133, 0.92);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .treatments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .treatments-hero {
+    padding: 4rem 1.5rem 2.5rem;
+    text-align: left;
+  }
+
+  .treatments-hero h1 {
+    font-size: 2rem;
+  }
+
+  .treatments-intro {
+    font-size: 0.95rem;
+  }
+
+  .treatments-section {
+    padding: 1rem 1.5rem 3rem;
+  }
+
+  .treatments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .treatment-image {
+    height: 210px;
+  }
+}
+
+
+
+/* === Discreet Treatment Links === */
+
+
+
+.treatment-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: #bda585;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+}
+
+.treatment-link:hover {
+  color: #a58a6c;
+  transform: translateX(3px);
+}
+
+/* === Treatments CTA Section === */
+
+.treatments-cta {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+
+.cta-button {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background-color: #bda585;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #a98f6e;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .treatments-cta h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
 
 /* Location Section*/
 
@@ -438,6 +839,7 @@ nav ul li a:hover {
 }
 
 #area-result {
+  display: none; 
   margin-top: 1rem;
   font-family: 'Lato', sans-serif;
   font-size: 1rem;

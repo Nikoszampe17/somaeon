@@ -110,126 +110,88 @@
         </div>
 
         <div class="booking-form-card">
-          <form class="booking-form" action="#" method="post">
-            <!-- Contact details -->
-            <div class="booking-form-group">
-              <label for="full-name">Full name<span>*</span></label>
-              <input
-                type="text"
-                id="full-name"
-                name="full-name"
-                placeholder="Your full name"
-                required
-              />
-            </div>
+          <form 
+        class="booking-form"
+        action="https://submit.jotform.com/submit/253405308310041/"
+        method="POST"
+        accept-charset="UTF-8"
+      >
 
-            <div class="booking-form-group booking-form-grid-2">
-              <div>
-                <label for="email">Email<span>*</span></label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-              <div>
-                <label for="phone">Mobile / WhatsApp<span>*</span></label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="+30 ..."
-                  required
-                />
-              </div>
-            </div>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" name="fullName" id="fullName" required>
+        </div>
 
-            <!-- Session preferences -->
-            <div class="booking-form-group">
-              <label for="session-type">Preferred session<span>*</span></label>
-              <select id="session-type" name="session-type" required>
-                <option value="">Select a session</option>
-                <option value="grounding">Somaeon Grounding Massage (60’)</option>
-                <option value="deep-restore">Deep Restore Ritual (75’)</option>
-                <option value="aeon-signature">Aeon Signature Journey (90’)</option>
-                <option value="unsure">I’m not sure &mdash; help me choose</option>
-              </select>
-            </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+        </div>
 
-            <div class="booking-form-group booking-form-grid-2">
-              <div>
-                <label for="preferred-date">Preferred date</label>
-                <input
-                  type="date"
-                  id="preferred-date"
-                  name="preferred-date"
-                />
-              </div>
-              <div>
-                <label for="time-window">Preferred time window</label>
-                <select id="time-window" name="time-window">
-                  <option value="">Select a time window</option>
-                  <option value="morning">Morning (09:00–12:00)</option>
-                  <option value="afternoon">Afternoon (12:00–17:00)</option>
-                  <option value="evening">Evening (17:00–21:00)</option>
-                  <option value="flexible">I’m flexible</option>
-                </select>
-              </div>
-            </div>
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="text" name="phoneNumber" id="phoneNumber" required>
+        </div>
 
-            <!-- Location -->
-            <div class="booking-form-group">
-              <label for="area">Area <span>*</span></label>
-              <input
-                type="text"
-                id="area"
-                name="area"
-                placeholder="e.g. Georgiou Papandreou 15, Alimos, 174 55 "
-                required
-              />
-              <p class="booking-helper">
-                Not sure if your area is covered?
-                <a href="location.html">Check our service area →</a>
-              </p>
-            </div>
+        <!-- Treatment -->
+        <div class="form-group">
+          <label for="treatment">Select Treatment</label>
+          <select name="treatment" id="treatment" required>
+            <option value="">Please Select</option>
+            <option value="Somaeon Grounding Massage – 60'">Somaeon Grounding Massage – 60'</option>
+            <option value="Deep Restore Ritual – 75'">Deep Restore Ritual – 75'</option>
+            <option value="Aeon Signature Journey – 75'">Aeon Signature Journey – 90'</option>
+          </select>
+        </div>
 
-            <!-- Additional details -->
-            <div class="booking-form-group">
-              <label for="notes">Anything you’d like us to know?</label>
-              <textarea
-                id="notes"
-                name="notes"
-                rows="4"
-                placeholder="e.g. back tension, recent injury, pregnancy, preferences, allergies..."
-              ></textarea>
-            </div>
+        <!-- Date -->
+        <div class="form-group">
+          <label for="preferredDate">Preferred Date</label>
+          <input type="date" name="preferredDate" id="preferredDate" required>
+        </div>
 
-            <!-- Consent -->
-            <div class="booking-form-group booking-consent">
-              <label>
-                <input type="checkbox" name="consent" required />
-                <span>
-                  I agree to the
-                  <a href="terms.html" target="_blank" rel="noopener">Terms of Use</a>
-                  and
-                  <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
-                </span>
-              </label>
-            </div>
+        <!-- Time Window -->
+        <div class="form-group">
+          <label for="preferredTime">Preferred Time Window</label>
+          <select name="preferredTime" id="preferredTime" required>
+            <option value="">Please Select</option>
+            <option value="Morning (09:00–12:00)">Morning (09:00–12:00)</option>
+            <option value="Midday (12:00–16:00)">Midday (12:00–16:00)</option>
+            <option value="Evening (16:00–21:00)">Evening (16:00–21:00)</option>
+            <option value="No preference">No preference</option>
+          </select>
+        </div>
 
-            <!-- Submit -->
-            <div class="booking-form-actions">
-              <button type="submit" class="booking-submit-btn">
-                Request Your Booking
-              </button>
-              <p class="booking-small-note">
-                You won’t be charged at this stage. We’ll contact you personally to
-                confirm your session.
-              </p>
-            </div>
-          </form>
+        <!-- Area -->
+        <div class="form-group">
+          <label for="area">Area </label>
+          <input type="text" name="area" id="area" required>
+
+          <div class="form-helper">
+            Not sure if your area is covered?
+            <a href="../pages/location.html" class="check-area-link">Check our service zone →</a>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea name="notes" id="notes" rows="4"></textarea>
+        </div>
+
+        <!-- Consent -->
+        <div class="form-group consent">
+          <label>
+            <input type="checkbox" name="consent" required>
+            I consent to Somaeon contacting me regarding my booking request.
+          </label>
+        </div>
+
+        <button type="submit" class="booking-submit">Book My Session</button>
+
+      </form>
         </div>
       </div>
     </section>

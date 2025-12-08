@@ -1032,7 +1032,7 @@ nav ul li a:hover {
   margin: 0 auto;
   padding: 2rem;
   background: #F0E7DB;
-  border-radius: 14px;
+  border-radius: 7px;
 }
 
 .booking-form .form-group {
@@ -1042,7 +1042,7 @@ nav ul li a:hover {
 .booking-form label {
   font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   display: block;
   color: #4B4B4B;
 }
@@ -1113,6 +1113,37 @@ nav ul li a:hover {
 .booking-consent a:hover {
   text-decoration: underline;
 }
+
+/*Legal consent*/
+.booking-consent label,
+.booking-legal-consent label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: #4B4B4B;
+}
+
+
+.booking-legal-consent input[type="checkbox"] {
+  margin-top: 0.2rem;
+}
+
+.booking-legal-consent a {
+  color: #BDA585;
+  text-decoration: none;
+
+}
+
+.booking-legal-consent a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
 
 /* Actions */
 

@@ -1140,8 +1140,24 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+@media (max-width: 600px) {
+  .booking-consent label,
+  .booking-legal-consent label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.9rem; /* λίγο πιο μαζεμένο στο κινητό */
+  }
 
+  .booking-consent input[type="radio"],
+  .booking-legal-consent input[type="checkbox"] {
+    margin-top: 0; /* να μην πετάει το κουμπί προς τα πάνω */
+  }
 
+  .booking-form-group {
+    margin-bottom: 1.6rem; /* λίγο πιο σφιχτό spacing στο mobile γενικά */
+  }
+}
 
 
 
@@ -1366,3 +1382,4 @@ section {
     font-size: 1.2rem;
   }
 }
+

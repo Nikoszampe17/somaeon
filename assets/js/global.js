@@ -33,3 +33,27 @@ document.querySelectorAll('.nav-left a, .nav-right a').forEach(link => {
     navRight.classList.remove('active');
   });
 });
+
+
+/* Hmeromhnia listas form*/ 
+ document.addEventListener('DOMContentLoaded', () => {
+  const dateInput = document.getElementById('preferredDateDisplay');
+  const monthField = document.getElementById('preferredDateMonth');
+  const dayField = document.getElementById('preferredDateDay');
+  const yearField = document.getElementById('preferredDateYear');
+  const form = document.querySelector('.booking-form');
+
+  if (!form || !dateInput) return; // prevents errors on pages without the form
+
+  form.addEventListener('submit', () => {
+    const value = dateInput.value; // format: YYYY-MM-DD
+    if (!value) return;
+
+    const [year, month, day] = value.split('-');
+
+    // mapping to jotform's expected structure
+    monthField.value = month;
+    dayField.value = day;
+    yearField.value = year;
+  });
+});

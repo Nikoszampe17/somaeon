@@ -110,88 +110,188 @@
         </div>
 
         <div class="booking-form-card">
-          <form 
-        class="booking-form"
-        action="https://submit.jotform.com/submit/253405308310041/"
-        method="POST"
-        accept-charset="UTF-8"
-      >
+          
+<form class="booking-form"
+  action="https://submit.jotform.com/submit/253405308310041"
+  method="POST"
+  accept-charset="utf-8"
+  autocomplete="on"
+>
+  <!-- Required for Jotform -->
+  <input type="hidden" name="formID" value="253405308310041" />
+  <input
+    type="hidden"
+    class="simple_spc"
+    id="simple_spc"
+    name="simple_spc"
+    value="253405308310041-253405308310041"
+  />
 
-        <!-- Full Name -->
-        <div class="form-group">
-          <label for="fullName">Full Name</label>
-          <input type="text" name="fullName" id="fullName" required>
-        </div>
+  <!-- Honeypot (spam protection) -->
+  <div style="display:none;">
+    Should be Empty:
+    <input type="text" name="website" value="" />
+  </div>
 
-        <!-- Email -->
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" required>
-        </div>
+  <!-- Full Name -->
+  <div class="booking-form-group">
+    <label for="fullName">Full Name<span>*</span></label>
+    <input
+      type="text"
+      id="fullName"
+      name="q5_fullName"
+      placeholder="e.g. Gioros Papadopoulos"
+      required
+    />
+  </div>
 
-        <!-- Phone -->
-        <div class="form-group">
-          <label for="phoneNumber">Phone Number</label>
-          <input type="text" name="phoneNumber" id="phoneNumber" required>
-        </div>
+  <!-- Email -->
+  <div class="booking-form-group">
+    <label for="email">Email<span>*</span></label>
+    <input
+      type="email"
+      id="email"
+      name="q6_email"
+      placeholder="example@example.com"
+      required
+    />
+  </div>
 
-        <!-- Treatment -->
-        <div class="form-group">
-          <label for="treatment">Select Treatment</label>
-          <select name="treatment" id="treatment" required>
-            <option value="">Please Select</option>
-            <option value="Somaeon Grounding Massage – 60'">Somaeon Grounding Massage – 60'</option>
-            <option value="Deep Restore Ritual – 75'">Deep Restore Ritual – 75'</option>
-            <option value="Aeon Signature Journey – 75'">Aeon Signature Journey – 75'</option>
-          </select>
-        </div>
+  <!-- Phone -->
+  <div class="booking-form-group">
+    <label for="phone">Phone Number<span>*</span></label>
+    <input
+      type="text"
+      id="phone"
+      name="q8_phoneNumber"
+      placeholder="e.g. +30 6941234567"
+      required
+    />
+  </div>
 
-        <!-- Date -->
-        <div class="form-group">
-          <label for="preferredDate">Preferred Date</label>
-          <input type="date" name="preferredDate" id="preferredDate" required>
-        </div>
+  <!-- Treatment -->
+  <div class="booking-form-group">
+    <label for="treatment">Select Treatment<span>*</span></label>
+    <select id="treatment" name="q9_selectTreatment" required>
+      <option value="">Please select</option>
+      <option value="Somaeon Grounding Massage - 60'">
+        Somaeon Grounding Massage – 60’
+      </option>
+      <option value="Deep Restore Ritual - 75'">
+        Deep Restore Ritual – 75’
+      </option>
+      <option value="Aeon Signature Journey - 75'">
+        Aeon Signature Journey – 75’
+      </option>
+      <option value="I am not sure - help me choose">
+        I am not sure — help me choose
+      </option>
+    </select>
+  </div>
 
-        <!-- Time Window -->
-        <div class="form-group">
-          <label for="preferredTime">Preferred Time Window</label>
-          <select name="preferredTime" id="preferredTime" required>
-            <option value="">Please Select</option>
-            <option value="Morning (09:00–12:00)">Morning (09:00–12:00)</option>
-            <option value="Midday (12:00–16:00)">Midday (12:00–16:00)</option>
-            <option value="Evening (16:00–21:00)">Evening (16:00–21:00)</option>
-            <option value="No preference">No preference</option>
-          </select>
-        </div>
+  <!-- Preferred Date (visible input + hidden Jotform fields) -->
+  <div class="booking-form-group">
+    <label for="preferredDateDisplay">Preferred Date<span>*</span></label>
+    <input
+      type="date"
+      id="preferredDateDisplay"
+      required
+    />
+    <!-- Hidden fields in the exact structure Jotform expects -->
+    <input type="hidden" name="q10_preferredDate[month]" id="preferredDateMonth" />
+    <input type="hidden" name="q10_preferredDate[day]" id="preferredDateDay" />
+    <input type="hidden" name="q10_preferredDate[year]" id="preferredDateYear" />
+  </div>
 
-        <!-- Area -->
-        <div class="form-group">
-          <label for="area">Area </label>
-          <input type="text" name="area" id="area" required>
+  <!-- Preferred Time Window -->
+  <div class="booking-form-group">
+    <label for="preferredTime">Preferred Time Window<span>*</span></label>
+    <select id="preferredTime" name="q11_preferredTime" required>
+      <option value="">Please select</option>
+      <option value="Morning (09:00-12:00)">Morning (09:00–12:00)</option>
+      <option value="Midday (12:00-16:00)">Afternoon (12:00–17:00)</option>
+      <option value="Evening (16:00-21:00)">Evening (17:00–21:00)</option>
+      <option value="I am flexible">I am flexible</option>
+    </select>
+  </div>
 
-          <div class="form-helper">
-            Not sure if your area is covered?
-            <a href="../pages/location.html" class="check-area-link">Check our service zone →</a>
-          </div>
-        </div>
+  <!-- Area -->
+  <div class="booking-form-group">
+    <label for="area">Address<span>*</span></label>
+    <input
+      type="text"
+      id="area"
+      name="q12_area"
+      placeholder="e.g. Georgiou Papandreou 15, Alimos, 174 56"
+      required
+    />
+    <p class="booking-helper">
+      Not sure if your area is covered?
+      <a href="../pages/location.html" class="check-area-link">
+        Check our service zone →
+      </a>
+    </p>
+  </div>
 
-        <!-- Notes -->
-        <div class="form-group">
-          <label for="notes">Additional Notes</label>
-          <textarea name="notes" id="notes" rows="4"></textarea>
-        </div>
+  <!-- Additional Notes -->
+  <div class="booking-form-group">
+    <label for="notes">Additional Notes</label>
+    <textarea
+      id="notes"
+      name="q13_additionalNotes"
+      rows="4"
+      placeholder="Anything you’d like us to know? Access, sensitivities, recent injuries, parking details..."
+    ></textarea>
+  </div>
 
-        <!-- Consent -->
-        <div class="form-group consent">
-          <label>
-            <input type="checkbox" name="consent" required>
-            I consent to Somaeon contacting me regarding my booking request.
-          </label>
-        </div>
+  <!-- Consent -->
+  <div class="booking-form-group booking-consent">
+    <label>
+      <input
+        type="radio"
+        name="q15_typeA15"
+        value="I consent to Somaeon contacting me regarding my booking request."
+        required
+      />
+      <span>
+        I consent to Somaeon contacting me regarding my booking request.
+      </span>
+    </label>
+  </div>
 
-        <button type="submit" class="booking-submit">Book My Session</button>
+  <!-- Legal consent -->
+<div class="booking-form-group booking-legal-consent">
+  <label>
+    <input
+      type="radio"
+      id="terms-consent"
+      name="termsConsent"
+      required
+    />
+    <span>
+      I have read and agree to the
+      <a href="terms.html" target="_blank" rel="noopener">Terms of Use</a>
+      and
+      <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+    </span>
+  </label>
+</div>
 
-      </form>
+
+  <!-- Submit -->
+  <div class="booking-form-actions">
+    <button type="submit" class="booking-submit-btn">
+      Submit Booking Request
+    </button>
+    <p class="booking-small-note">
+      You won’t be charged at this stage. We’ll contact you personally to
+      confirm your session and exact time.
+    </p>
+  </div>
+</form>
+
+
+
         </div>
       </div>
     </section>
@@ -246,4 +346,3 @@
 
   </body>
 </html>
-

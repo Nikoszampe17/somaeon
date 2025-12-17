@@ -175,45 +175,59 @@
     Share a few details and we’ll get back to you personally.
   </p>
 
-  <form action="https://formsubmit.co/zampetakisnikos@gmail.com" method="POST" class="host-form">
-
-
-    <!-- FormSubmit settings -->
-    <input type="hidden" name="_subject" value="New Host Application">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-   <input type="hidden" name="_next" value="https://nikoszampe17.github.io/somaeon/pages/thank-you-host.html">
-
-
-    <label>
-      Property / Host Name *
-      <input type="text" name="Host Name" required>
-    </label>
-
-    <label>
-      Location / Address *
-      <input type="text" name="Address" required>
-    </label>
-
-    <label>
-      Link to Listing (Airbnb/Booking)
-      <input type="url" name="Listing URL">
-    </label>
-
-    <label>
-      Contact Email *
-      <input type="email" name="Email" required>
-    </label>
-
-    <label>
-      Message
-      <textarea name="Message" rows="4"></textarea>
-    </label>
-
-    <button type="submit" class="host-submit-btn">
-      Submit Application
-    </button>
-  </form>
+  <form class="host-form"
+    action="https://submit.jotform.com/submit/253504856457061"
+    method="POST"
+    accept-charset="utf-8"
+    autocomplete="on">
+    
+    <!-- Required for Jotform -->
+    <input type="hidden" name="formID" value="253504856457061" />
+    <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="253504856457061-253504856457061" />
+    
+    <!-- Honeypot -->
+    <div style="display:none;">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+    </div>
+    
+    <!-- Property / Host Name -->
+    <div>
+        <label for="input_6">Property / Host Name</label>
+        <input type="text" id="input_6" name="q6_property" placeholder="e.g., Villa Marina, The Seaside Retreat" required />
+    </div>
+    
+    <!-- Location / Address -->
+    <div>
+        <label for="input_7">Location / Address</label>
+        <input type="text" id="input_7" name="q7_location" placeholder="Full street address, city, postal code" required />
+    </div>
+    
+    <!-- Link to Listing -->
+    <div>
+        <label for="input_9">Link to Listing</label>
+        <input type="text" id="input_9" name="q9_linkTo" placeholder="https://www.airbnb.com/rooms/..." />
+    </div>
+    
+    <!-- Email -->
+    <div>
+        <label for="input_4">Email</label>
+        <input type="email" id="input_4" name="q4_email" placeholder="example@example.com" required />
+    </div>
+    
+    <!-- Message / Notes -->
+    <div>
+        <label for="input_8">Message / Notes</label>
+        <textarea id="input_8" name="q8_message" rows="4" placeholder="Tell us about your property, amenities, availability, or any special features..."></textarea>
+    </div>
+    
+    <!-- Submit Button -->
+    <div>
+        <button type="submit" class="host-submit-btn">
+            Submit Application
+        </button>
+    </div>
+</form>
 </section>
 
   </main>
@@ -246,6 +260,4 @@
   <script src="../script.js"></script>
 </body>
 </html>
-
-
 

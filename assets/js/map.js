@@ -113,7 +113,7 @@ document.getElementById("check-area-btn").addEventListener("click", () => {
 
         const distanceMeters = element.distance.value;
         const distanceKm = distanceMeters / 1000;
-        const freeRadiusKm = freeRadius / 4000;
+        const freeRadiusKm = freeRadius / 1000;
 
         output.style.display = "block";
 
@@ -122,7 +122,7 @@ document.getElementById("check-area-btn").addEventListener("click", () => {
             "Your area is inside our complimentary service zone.";
         } else {
           const extraKm = (distanceKm - freeRadiusKm).toFixed(2);
-          const feePerKm = 2.50;
+          const feePerKm = 2.30;
           const fee = (extraKm * feePerKm).toFixed(2);
 
           output.textContent =

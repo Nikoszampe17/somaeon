@@ -21,17 +21,17 @@ body {
 /* === Header === */
 .main-header {
   background-color: #f0e7db;
-  padding: 2.5rem 0;
+   padding: 1rem 0; /*το αρχικο ήταν 2.5rem */
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: padding 0.3s ease, box-shadow 0.3s ease;
+   /*transition: padding 0.3s ease, box-shadow 0.3s ease;*/
 }
 
-.main-header.shrink {
+/*.main-header.shrink {
   padding: 1rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
+}*/
 
 .header-container {
   position: relative; /* Required for absolute hamburger positioning */

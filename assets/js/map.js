@@ -3,6 +3,19 @@ let map, radiusCircle;
 const centerPoint = { lat: 37.9755, lng: 23.7348 }; // Syntagma Square
 const freeRadius = 4000; // 4km free zone
 
+// === API REQUEST GUARD ===
+let lastApiCall = 0;
+const API_COOLDOWN = 5000; // 5 seconds
+
+function canMakeApiCall() {
+  const now = Date.now();
+  if (now - lastApiCall < API_COOLDOWN) {
+    return false;
+  }
+  lastApiCall = now;
+  return true;
+}
+
 function initMap() {
   map = new google.maps.Map(document.getElementById("somaeon-map"), {
     center: centerPoint,
@@ -28,42 +41,102 @@ function initMap() {
 }
 
 // === Address Checker ===
+
+// Reset result when typing
+document.getElementById("address-input").addEventListener("input", () => {
+  const areaBox = document.getElementById("area-result");
+  areaBox.style.display = "none";
+});
+
 document.getElementById("check-area-btn").addEventListener("click", () => {
   const address = document.getElementById("address-input").value.trim();
   const output = document.getElementById("area-result");
+  const button = document.getElementById("check-area-btn");
+
+  output.style.display = "none";
+
+  // === RATE LIMIT ===
+  if (!canMakeApiCall()) {
+    output.style.display = "block";
+    output.textContent = "Please wait a few seconds before checking again.";
+    return;
+  }
 
   if (!address) {
+    output.style.display = "block";
     output.textContent = "Please enter an address.";
     return;
   }
 
+  // Disable button to prevent spam
+  button.disabled = true;
+
   const geocoder = new google.maps.Geocoder();
+
   geocoder.geocode({ address }, (results, status) => {
+
     if (status !== "OK") {
+      output.style.display = "block";
       output.textContent = "Address not found. Please try again.";
+      button.disabled = false;
       return;
     }
 
-    const resultLocation = results[0].geometry.location;
-    const distance = google.maps.geometry.spherical.computeDistanceBetween(
-      resultLocation,
-      new google.maps.LatLng(centerPoint.lat, centerPoint.lng)
+    const destination = results[0].geometry.location;
+
+    const service = new google.maps.DistanceMatrixService();
+
+    service.getDistanceMatrix(
+      {
+        origins: [centerPoint],
+        destinations: [destination],
+        travelMode: "DRIVING",
+        unitSystem: google.maps.UnitSystem.METRIC
+      },
+      (response, status) => {
+
+        if (status !== "OK") {
+          output.style.display = "block";
+          output.textContent = "Distance calculation failed.";
+          button.disabled = false;
+          return;
+        }
+
+        const element = response.rows[0].elements[0];
+
+        if (element.status !== "OK") {
+          output.style.display = "block";
+          output.textContent = "Route not found.";
+          button.disabled = false;
+          return;
+        }
+
+        const distanceMeters = element.distance.value;
+        const distanceKm = distanceMeters / 1000;
+        const freeRadiusKm = freeRadius / 1000;
+
+        output.style.display = "block";
+
+        if (distanceKm <= freeRadiusKm) {
+          output.textContent =
+            "Your area is inside our complimentary service zone.";
+        } else {
+          const extraKm = (distanceKm - freeRadiusKm).toFixed(2);
+          const feePerKm = 2.50;
+          const fee = (extraKm * feePerKm).toFixed(2);
+
+          output.textContent =
+            `Your area is ${extraKm} km outside the free zone.\n` +
+            `Estimated travel fee: €${fee}.`;
+        }
+
+        // Re-enable button after response
+        setTimeout(() => {
+          button.disabled = false;
+        }, 2000);
+      }
     );
 
-    if (distance <= freeRadius) {
-      output.textContent = "Your area is inside our complimentary service zone.";
-    } else {
-      // €1.25 per km each way → €2.50 per km total charge
-const feePerKm = 2.50;
-
-const extraKm = ((distance - freeRadius) / 1000).toFixed(2);
-const fee = (extraKm * feePerKm).toFixed(2);
-
-output.textContent = `
-Your area is ${extraKm} km outside the free zone.
-Estimated travel fee: €${fee}.
-`;
-
-    }
   });
+
 });

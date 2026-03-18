@@ -2277,3 +2277,212 @@ section {
     max-width: 120px;
   }
 }
+
+
+/*Terms of Use and Privacy Policy*/
+
+/* ===== Terms & Privacy Page Text Styles ===== */
+/* Use this alongside your existing header/footer CSS */
+
+/* ----- Text Content Base Styles ----- */
+body.secondary-page {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  background-color: #fefcf7;
+  color: #2e2e2e;
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* ----- Section Navigation Buttons (only the text part if needed) ----- */
+.section-nav {
+  display: none;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.8rem 1rem 1rem;
+  flex-wrap: wrap;
+}
+
+.scroll-btn {
+  background: transparent;
+  border: 1.5px solid #8db596;
+  color: #2e2e2e;
+  padding: 0.6rem 1.8rem;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: all 0.2s;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.scroll-btn:hover {
+  background: #8db596;
+  color: white;
+  border-color: #8db596;
+}
+
+/* ----- Main Content Text Styles ----- */
+.content-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.content-section h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1f3b2c;
+  border-bottom: 1px dashed #c7e0c7;
+  padding-bottom: 0.4rem;
+}
+
+.content-section h2:first-of-type {
+  margin-top: 0;
+}
+
+.content-section h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 2rem 0 0.5rem;
+  color: #2b5e3b;
+}
+
+.content-section p {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: #3a3a3a;
+}
+
+.content-section ul {
+  margin: 1rem 0 1.5rem 1.8rem;
+}
+
+.content-section li {
+  margin-bottom: 0.4rem;
+}
+
+.legal-intro {
+  font-size: 1.1rem;
+  background: #f8f3ea;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border-left: 6px solid #8db596;
+}
+
+.content-section a[href^="mailto"] {
+  color: #8db596;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.content-section a[href^="mailto"]:hover {
+  text-decoration: underline;
+}
+
+/* ----- Mobile Optimizations (≤ 600px) ----- */
+@media (max-width: 600px) {
+  body.secondary-page {
+    font-size: 15px;
+  }
+
+  .section-nav {
+    gap: 0.8rem;
+    padding: 1.2rem 0.5rem;
+  }
+  
+  .scroll-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .content-section {
+    padding: 2rem 1.2rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.7rem;
+    margin-top: 2rem;
+  }
+
+  .content-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .legal-intro {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .content-section ul {
+    margin-left: 1.2rem;
+  }
+}
+
+/* ----- Extra Small Devices (≤ 400px) ----- */
+@media (max-width: 400px) {
+  .section-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  
+  .scroll-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .content-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .content-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .legal-intro {
+    padding: 1rem;
+  }
+}
+
+/* ----- Touch-friendly improvements for mobile ----- */
+@media (max-width: 768px) {
+  .scroll-btn {
+    padding: 0.7rem 1.5rem;  /* Larger tap target */
+  }
+  
+  .content-section a[href^="mailto"] {
+    padding: 0.2rem 0;        /* Easier to tap */
+    display: inline-block;
+  }
+}
+
+/* ----- Print Styles (optional) ----- */
+@media print {
+  .section-nav {
+    display: none;
+  }
+  
+  .content-section {
+    max-width: 100%;
+    padding: 0.5in;
+  }
+  
+  .content-section h2 {
+    border-bottom: 1px solid #ccc;
+  }
+}

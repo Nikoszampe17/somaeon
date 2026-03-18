@@ -113,7 +113,7 @@ document.getElementById("check-area-btn").addEventListener("click", () => {
 
         const distanceMeters = element.distance.value;
         const distanceKm = distanceMeters / 1000;
-        const freeRadiusKm = freeRadius / 1000;
+        const freeRadiusKm = freeRadius / 4000;
 
         output.style.display = "block";
 
